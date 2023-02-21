@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CityObject } from '../models/types.model';
 
 @Component({
   selector: 'app-city-info',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./city-info.component.scss']
 })
 export class CityInfoComponent {
+@Input() cityObject!: CityObject;
+
+
+  // cityInfo
 
 }

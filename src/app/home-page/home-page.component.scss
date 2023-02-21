@@ -1,0 +1,25 @@
+
+.home_page_contant{
+    display: flex;
+    background-color: #F5F5F5;
+    height: 100%;
+    width: 100%
+}
+
+.city_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.cities_display{
+    display: flex;
+    flex-direction: column;
+    background-color: #ecede2;
+}
+
+.drop_down_list{
+    margin: 2em;
+    width: 50%;
+    padding:10px;
+    border: none;
+}
