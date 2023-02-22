@@ -2,12 +2,12 @@
 export var hebrew = new Map();
 
 
-hebrew.set("edit", "התקן");
+hebrew.set("edit", "ערוך");
 hebrew.set("save", "שמור");
 
 hebrew.set("north", "צפון");
 hebrew.set("east", "מזרח");
-hebrew.set("south ", "דרום");
+hebrew.set("south", "דרום");
 hebrew.set("west", "מערב");
 
 hebrew.set("cityName", "עיר");

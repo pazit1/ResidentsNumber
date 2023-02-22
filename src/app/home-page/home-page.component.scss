@@ -1,25 +1,72 @@
 
 .home_page_contant{
+    // position: relative;
+    margin-top: 10%;
     display: flex;
     background-color: #F5F5F5;
     height: 100%;
-    width: 100%
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Varela Round';
 }
 
-.city_list{
+.city_displayer_header{
     display: flex;
-    flex-direction: column;
+    direction: rtl;
+    flex-direction: row;
+    color: #4D695C;
+    // font-size: 1.3em;
+    margin: 0.5em 1em 0;
 }
 
-.cities_display{
+.header_coloumn_name{
+    padding: 1em 3em 0 3em;
+    font-family: 'Varela Round';
+    font-weight: bold;
+}
+
+.city{
+    margin: 1em;
+}
+
+.cities_block_display{
+    position: absolute;
+    left: 30em;
+    top: 15em;
     display: flex;
     flex-direction: column;
-    background-color: #ecede2;
+    background-color: #eeeee9; // #ecede2; 
+    height: fit-content;
+    min-width: fit-content;
+    width: 50%;
+    min-height: 15em;    
+    border-radius: 15px;
 }
 
 .drop_down_list{
+    position: absolute;
+    top: 4em;
+    left: 8em;
     margin: 2em;
-    width: 50%;
-    padding:10px;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Varela Round';
+}
+
+.select{
+    width: 6em;
+    height: 2em;
+    color: #4D695C;// #ecede2;
+    background-color:  #BFD4CE;
     border: none;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 1.1em;
+}
+
+.option{
+    color: #4D695C;// #ecede2;
+    background-color:  #BFD4CE;
 }

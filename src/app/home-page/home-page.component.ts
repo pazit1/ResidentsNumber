@@ -1,7 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
+
+
 import { CitiesService } from '../services/cities.service';
 import { CityObject, Direction } from '../models/types.model';
+import { hebrew } from '../shared/hebrew.data';
+
+
 
 @Component({
   selector: 'app-home-page',
@@ -10,16 +15,26 @@ import { CityObject, Direction } from '../models/types.model';
 })
 export class HomePageComponent implements OnInit{
 
+
+  north_he = hebrew.get("north");
+  east_he = hebrew.get("east");
+  sout_he = hebrew.get("south");
+  west_he = hebrew.get("west");
+  
+  cityName_he = hebrew.get("cityName");
+  residentsNum_he = hebrew.get("residentsNum");
+
+
+
   cities: Array<CityObject> = [];
   chosenDirection: Direction = Direction.North; //north is a Defualt value
-  // directionsList = [Direction.North, Direction.East, Direction.South, Direction.West];
-  // directionsList = ["North", "East", "South", "West"];
+
 
   directionsList = [
-    {id: Direction.North, value: "North"}, 
-    {id: Direction.East, value: "East",},
-    {id: Direction.South, value: "South"},
-    {id: Direction.West, value: "West"}
+    {id: Direction.North, value: this.north_he}, 
+    {id: Direction.East, value: this.east_he},
+    {id: Direction.South, value: this.sout_he},
+    {id: Direction.West, value: this.west_he}
 ];
 
 
