@@ -1,0 +1,124 @@
+[
+    {
+        "name":"חיפה",
+        "number": 282831,
+        "direction": "צפון"
+    },
+    {
+        "name":"צפת",
+        "number": 37169,
+        "direction": "צפון"
+    },
+    {
+        "name":"טבריה",
+        "number": 47734,
+        "direction": "צפון"
+    },
+    {
+        "name":"נהריה",
+        "number": 61406,
+        "direction": "צפון"
+    },
+    {
+        "name":"עפולה",
+        "number": 59822,
+        "direction": "צפון"
+    },
+    {
+        "name":"עכו",
+        "number": 49801,
+        "direction": "צפון"
+    },
+    {
+        "name":"אשדוד",
+        "number": 226870,
+        "direction": "דרום"
+    },
+    {
+        "name":"באר שבע",
+        "number": 213970,
+        "direction": "דרום"
+    },
+    {
+        "name":"אשקלון",
+        "number": 153170,
+        "direction": "דרום"
+    },
+    {
+        "name":"אילת",
+        "number": 52931,
+        "direction": "דרום"
+    },
+    {
+        "name":"ערד",
+        "number": 27750,
+        "direction": "דרום"
+    },
+    {
+        "name":"שדרות",
+        "number": 31257,
+        "direction": "דרום"
+    },
+    {
+        "name":"ירושלים",
+        "number": 979080,
+        "direction": "מזרח"
+    },
+    {
+        "name":"אבו גוש",
+        "number": 7698,
+        "direction": "מזרח"
+    },
+    {
+        "name":"בית שמש",
+        "number": 155107,
+        "direction": "מזרח"
+    },
+    {
+        "name":"ראש העין",
+        "number": 56344,
+        "direction": "מזרח"
+    },
+    {
+        "name":"בית שאן",
+        "number": 18227,
+        "direction": "מזרח"
+    },    
+    {
+        "name":"שוהם",
+        "number": 21045,
+        "direction": "מזרח"
+    },
+    {
+        "name":"הרצליה",
+        "number": 106800,
+        "direction": "מערב"
+    },
+    {
+        "name":"תל אביב",
+        "number": 473840,
+        "direction": "מערב"
+    },
+    {
+        "name":"נתניה",
+        "number": 232760,
+        "direction": "מערב"
+    },
+    {
+        "name":"בת ים",
+        "number": 128200,
+        "direction": "מערב"
+    },
+    {
+        "name":"חולון",
+        "number": 197940,
+        "direction": "מערב"
+    },
+    {
+        "name":"רעננה",
+        "number": 79010,
+        "direction": "מערב"
+    }
+
+  ]
+

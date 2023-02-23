@@ -2,9 +2,11 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { CitiesService } from '../services/cities.service';
+import { CitiesService } from '../services/citiesInfo.service';
 import { CityObject, Direction } from '../models/types.model';
 import { hebrew } from '../shared/hebrew.data';
+import { DataService } from '../services/data.service';
+import { Observable } from 'rxjs';
 
 
 
@@ -24,10 +26,16 @@ export class HomePageComponent implements OnInit{
   cityName_he = hebrew.get("cityName");
   residentsNum_he = hebrew.get("residentsNum");
 
+  selectedDir: string = this.north_he;
 
+  cityObject: CityObject = {
+    name: "city",
+    residentsNumber: 40,
+    direction: Direction.East
+  }
 
-  cities: Array<CityObject> = [];
-  chosenDirection: Direction = Direction.North; //north is a Defualt value
+  cities: Observable<CityObject[]>;
+  // chosenDirection: Direction = Direction.North; //north is a Defualt value TODO: conect to select option
 
 
   directionsList = [
@@ -38,26 +46,33 @@ export class HomePageComponent implements OnInit{
 ];
 
 
-  constructor(private citiesService: CitiesService){
+  constructor(private citiesService: CitiesService, private data:DataService){
+      // this.cities = this.data.allCities$
+      this.cities = this.citiesService.fetchCitiesByDirection(this.selectedDir);
+      console.log("filtered_cities = ");
+      this.cities.forEach(
+          x=>{console.log(x)}
+      );
 
    }
 
+
   ngOnInit(): void{
-   this.fetchUpdatedCities();
+  //  this.fetchCitiesToDisplay();
   }
 
-  onDirectionSelect(selectEvent: Event): void {
-    console.log(selectEvent)
-    // this.chosenDirection = selectEvent.target.value;
-    this.fetchUpdatedCities();
+  onDirectionSelect(select: string): void {
+    this.selectedDir = select;
+    console.log("selected direction is: " + this.selectedDir);
+    // this.fetchCitiesToDisplay();
   }
 
-  fetchUpdatedCities(){
-    this.citiesService.fetchCitiesByDirection(this.chosenDirection).subscribe({
-      next: (citiesList) =>
-          this.cities = citiesList,
-      error: (error) => console.log(error),
-    })
-  }
+  // fetchCitiesToDisplay(){
+  //   this.citiesService.fetchCitiesByDirection(this.selectedDir).subscribe({
+  //     next: (citiesList) =>
+  //         this.cities = citiesList,
+  //     error: (error) => console.log(error),
+  //   })
+  // }
 
 }

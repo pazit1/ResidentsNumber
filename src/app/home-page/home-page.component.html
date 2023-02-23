@@ -1,24 +1,27 @@
 <div class="home_page_contant">
 
     <div class="drop_down_list">
-        <select class="select"(change)="onDirectionSelect($event)">
+        <select #direction class="select"(change)="onDirectionSelect(direction.value)">
             <option class="select" *ngFor="let direction of directionsList" value="{{direction.id}}">{{direction.value}}</option>
         </select>    
     </div>
 
 
-    <!-- <div class="cities_display" *ngFor="let city of cities">
-        <app-city-info [cityObject]="city"></app-city-info>
-    </div> -->
 
     <div class="cities_block_display">
             <span class="city_displayer_header">
                 <span class="header_coloumn_name">{{cityName_he}}</span>
                 <span class="header_coloumn_name">{{residentsNum_he}}</span>
             </span>
-        <div class="city">
-            <app-city-info></app-city-info>
-        </div>
+            <div class="city" *ngFor="let city of cities | async">
+                <app-city-info [cityObject]="city"></app-city-info>
+            </div>
+        <!-- <div class="city">
+            <app-city-info [cityObject]="cityObject"></app-city-info>
+            <app-city-info [cityObject]="cityObject"></app-city-info>
+            <app-city-info [cityObject]="cityObject"></app-city-info>
+            <app-city-info [cityObject]="cityObject"></app-city-info>
+        </div> -->
     </div>
 
 </div>

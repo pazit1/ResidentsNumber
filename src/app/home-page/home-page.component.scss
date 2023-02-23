@@ -22,8 +22,8 @@
 }
 
 .header_coloumn_name{
-    padding: 1em 3em 0 3em;
-    font-family: 'Varela Round';
+    padding: 1em 2em 0 2em;
+    // font-family: 'Varela Round';
     font-weight: bold;
 }
 
@@ -34,15 +34,14 @@
 .cities_block_display{
     position: absolute;
     left: 30em;
-    top: 15em;
+    top: 10em;
     display: flex;
     flex-direction: column;
     background-color: #eeeee9; // #ecede2; 
-    height: fit-content;
-    min-width: fit-content;
-    width: 50%;
-    min-height: 15em;    
+    width: fit-content;
     border-radius: 15px;
+    max-height: 30em;
+    scroll-behavior: auto;
 }
 
 .drop_down_list{
@@ -52,7 +51,7 @@
     margin: 2em;
     width: fit-content;
     height: fit-content;
-    font-family: 'Varela Round';
+    // font-family: 'Varela Round';
 }
 
 .select{
