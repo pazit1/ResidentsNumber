@@ -6,22 +6,14 @@
         </select>    
     </div>
 
-
-
     <div class="cities_block_display">
             <span class="city_displayer_header">
                 <span class="header_coloumn_name">{{cityName_he}}</span>
                 <span class="header_coloumn_name">{{residentsNum_he}}</span>
             </span>
             <div class="city" *ngFor="let city of cities | async">
-                <app-city-info  [cityObject]="city"></app-city-info>
+                <app-city-info  [name]="city.name" [residentsNumber]="city.residentsNumber.toString()"></app-city-info>
             </div>
-        <!-- <div class="city">
-            <app-city-info [cityObject]="cityObject"></app-city-info>
-            <app-city-info [cityObject]="cityObject"></app-city-info>
-            <app-city-info [cityObject]="cityObject"></app-city-info>
-            <app-city-info [cityObject]="cityObject"></app-city-info>
-        </div> -->
     </div>
 
 </div>

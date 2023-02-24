@@ -1,11 +1,19 @@
 
 <div  dir="rtl" class="cityWraper">
 
-    <span class="data_style">{{cityObject.name}}</span>
-    <span class="data_style">{{cityObject.residentsNumber}}</span>
-
-    <button class="button">התקן</button>
-    <button class="button">שמור</button>
- 
-
+    <span class="data_style">{{name}}</span>
+    <span class="data_style">
+       <input #inputNumber id="n" disabled
+           class="inputNumber"
+          type="string"
+           id="id"
+            autocomplete="off"
+            dir="rtl"
+            type="number"
+            data-ng-change="numbersOnly()"
+            placeholder="{{ residentsNumber }}"
+        [value]="residentsNumber" (change)="numberChange.emit(inputNumber.value)" />
+    </span>
+    <button class="button" (click)="OnEditResidentsNumberClick()">{{edit_he}}</button>
+    <button class="button" (click)="onSaveNumberChangeClick()">{{save_he}}</button>
 </div>

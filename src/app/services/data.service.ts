@@ -33,6 +33,10 @@ export class DataService {
       // this.allCities.next(this.arr);
  }
 
+ 
+ getAllCitiesInfo(): Observable<any>{
+  return this.http.get(this.demoData);
+}
 
  getFilteredCitiesList(direction: string){
   this.arr = []; //clear previous filters
@@ -49,10 +53,6 @@ export class DataService {
     this.allCities.next(this.arr);
  }
 
-
-  getAllCitiesInfo(): Observable<any>{
-      return this.http.get(this.demoData);
-  }
 
   editCityResidentsNumber(name: string, number: number){
     console.log("edit json for city: " + name + "with residents new number: " + number);
