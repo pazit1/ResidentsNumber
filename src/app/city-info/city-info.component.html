@@ -3,7 +3,7 @@
 
     <span class="data_style">{{name}}</span>
     <span class="data_style">
-       <input #inputNumber id="n" disabled
+       <input #inputNumber disabled
            class="inputNumber"
           type="string"
            id="id"
@@ -15,5 +15,5 @@
         [value]="residentsNumber" (change)="numberChange.emit(inputNumber.value)" />
     </span>
     <button class="button" (click)="OnEditResidentsNumberClick()">{{edit_he}}</button>
-    <button class="button" (click)="onSaveNumberChangeClick()">{{save_he}}</button>
+    <button class="button" (click)="onSaveNumberChangeClick(inputNumber.value)">{{save_he}}</button>
 </div>

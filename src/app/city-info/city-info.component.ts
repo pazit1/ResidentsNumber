@@ -19,7 +19,7 @@ export class CityInfoComponent implements OnInit {
 
 edit_he = hebrew.get("edit");
 save_he = hebrew.get("save");
-enableNumberEdit = true;
+
 
 constructor(){}
 
@@ -31,14 +31,13 @@ ngOnInit(){
 
 OnEditResidentsNumberClick(){
   console.log("edit number")
-  this.enableNumberEdit = true;
   $("input").removeAttr('disabled');
 }
 
-onSaveNumberChangeClick(){
-  this.enableNumberEdit = false;
+onSaveNumberChangeClick(newNumber: string){
   $("input").attr('disabled', 'disabled')
-  this.numberChange.emit(this.residentsNumber);
+  console.log("number changed to:" + newNumber);
+  this.numberChange.emit(newNumber);
 }
 
 

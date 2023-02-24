@@ -17,7 +17,6 @@ import { Observable } from 'rxjs';
 })
 export class HomePageComponent implements OnInit{
 
-
   north_he = hebrew.get("north");
   east_he = hebrew.get("east");
   sout_he = hebrew.get("south");
@@ -35,8 +34,7 @@ export class HomePageComponent implements OnInit{
   }
 
   cities: Observable<CityObject[]>;
-  // chosenDirection: Direction = Direction.North; //north is a Defualt value TODO: conect to select option
-
+  editedNumber!: string;
 
   directionsList = [
     {id: Direction.North, value: this.north_he}, 
@@ -47,13 +45,11 @@ export class HomePageComponent implements OnInit{
 
 
   constructor(private citiesService: CitiesService, private data:DataService){
-      // this.cities = this.data.allCities$
       this.cities = this.citiesService.fetchCitiesByDirection(this.selectedDir);
       console.log("filtered_cities = ");
       this.cities.forEach(
           x=>{console.log(x)}
       );
-
    }
 
 
@@ -65,15 +61,11 @@ export class HomePageComponent implements OnInit{
     this.selectedDir = select;
     console.log("selected direction is: " + this.selectedDir);
     this.citiesService.fetchCitiesByDirection(this.selectedDir)
-    // this.fetchCitiesToDisplay();
   }
 
-  // fetchCitiesToDisplay(){
-  //   this.citiesService.fetchCitiesByDirection(this.selectedDir).subscribe({
-  //     next: (citiesList) =>
-  //         this.cities = citiesList,
-  //     error: (error) => console.log(error),
-  //   })
-  // }
+  saveNumberChange(cityName: string, newNumber: string){
+    console.log("Residents number of city: "+ cityName + "has changed to: "+ newNumber);
+    this.citiesService.editCityResidentNumber(cityName, Number(newNumber));
+  }
 
 }

@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-
-
 import { CityObject, Direction } from '../models/types.model';
 
 
@@ -53,10 +51,9 @@ export class DataService {
     this.allCities.next(this.arr);
  }
 
-
   editCityResidentsNumber(name: string, number: number){
     console.log("edit json for city: " + name + "with residents new number: " + number);
-      //change the json 
+    //cant wtire to json file without a server side, but suppose i could, after this line of json editing, i would call getFilteredCitiesList(direction) to display the new data
   }
 
 

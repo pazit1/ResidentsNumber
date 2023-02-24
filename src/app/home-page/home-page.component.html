@@ -12,7 +12,8 @@
                 <span class="header_coloumn_name">{{residentsNum_he}}</span>
             </span>
             <div class="city" *ngFor="let city of cities | async">
-                <app-city-info  [name]="city.name" [residentsNumber]="city.residentsNumber.toString()"></app-city-info>
+                <app-city-info  [name]="city.name" [residentsNumber]="city.residentsNumber.toString()" 
+                (numberChange)="saveNumberChange(city.name, $event)"></app-city-info>
             </div>
     </div>
 
