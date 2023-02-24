@@ -20,30 +20,33 @@ export class DataService {
 
 
   constructor(private http: HttpClient) {
-    this.getAllCitiesInfo().subscribe(
-      (data) => {
-        for(let i=0; i< data.length; i++){
-          this.arr.push({name: data[i].name, residentsNumber: data[i].number, direction: data[i].direction})
-        }
-      });
-      console.log("arr=");
-      console.log( this.arr);
-      this.allCities.next(this.arr)
-    
+    // this.getAllCitiesInfo().subscribe(
+      // (data) => {
+      //   for(let i=0; i< data.length; i++){
+      //     // if(data[i].direction == 'צפון'){
+      //     this.arr.push({name: data[i].name, residentsNumber: data[i].number, direction: data[i].direction})
+      //     // }
+      //   }
+      // });
+      // console.log("arr=");
+      // console.log( this.arr);
+      // this.allCities.next(this.arr);
+ }
 
-  //  this.getAllCitiesInfo().pipe(
-  //   map((data) => data.forEach((city: any) => {
-  //     let newCity:CityObject = {
-  //       name: city.name,
-  //       residentsNumber: city.residentsNumber,
-  //       direction: city.direction
-  //     };
-  //     console.log("city: " + city);
-  //     this.arr.push(newCity);
-  //     this.allCities.next(this.arr);
-  //   }))
-  // );
-  // console.log(this.arr);
+
+ getFilteredCitiesList(direction: string){
+  this.arr = []; //clear previous filters
+  this.getAllCitiesInfo().subscribe(
+    (data) => {
+      for(let i=0; i< data.length; i++){
+        if(data[i].direction == direction){
+        this.arr.push({name: data[i].name, residentsNumber: data[i].number, direction: data[i].direction})
+        }
+      }
+    });
+    console.log("arr=");
+    console.log( this.arr);
+    this.allCities.next(this.arr);
  }
 
 

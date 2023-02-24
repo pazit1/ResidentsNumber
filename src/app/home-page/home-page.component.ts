@@ -64,6 +64,7 @@ export class HomePageComponent implements OnInit{
   onDirectionSelect(select: string): void {
     this.selectedDir = select;
     console.log("selected direction is: " + this.selectedDir);
+    this.citiesService.fetchCitiesByDirection(this.selectedDir)
     // this.fetchCitiesToDisplay();
   }
 

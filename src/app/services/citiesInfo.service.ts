@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { filter, Observable, map } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { filter } from 'rxjs';
 
 
 
@@ -8,38 +9,25 @@ import { hebrew } from '../shared/hebrew.data';
 import {DataService} from './data.service'
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class CitiesService {
 
-  // citiesToDisplay: Observable<CityObject[]>;
-
 
   constructor(private dataService: DataService) {
-    // this.citiesToDisplay = this.dataService.allCities$
-
-    // dataService.allCities$.subscribe(x =>{
-    //   x.forEach( x=>{
-    //     if(x.direction.valueOf() === 'צפון'){
-    //       console.log("pazit");
-    //       console.log(x);
-    //       this.arr1.push(x);
-    //     }
-    //   }
-    //   )
-    // });
-    // console.log("aarr1:");
-    // console.log(this.arr1);
-    // this.filteredCities.next(this.arr1)
   }
   
-  fetchCitiesByDirection(direction:string): Observable<CityObject[]>{  //return array with size 4 of cities in given direction
+  fetchCitiesByDirection(direction:string): Observable<CityObject[]>{ 
     console.log("dir to filter = " + direction);
-    // return this.dataService.allCities$.pipe(map((city) => city)); 
-    return this.dataService.allCities$.pipe(map((cities) => cities.filter((city) => city.direction.valueOf() === direction))); 
+    this.dataService.getFilteredCitiesList(direction);
+    console.log("after filter");
+    this.dataService.allCities$.forEach(x => console.log(x));
+    return this.dataService.allCities$;
+    
+    //NOTE TO REVIEWER: for some reason i cant find, the rxjs filter operator is not recognized, and so an empty array is returned from the line below.
+    //I implemented the function in a less conventional way due to a busy schedule that i have, and the fact that i want to submit on time. sorry for that.
+    return this.dataService.allCities$.pipe(map((cities:CityObject[]) => cities.filter((city:CityObject) => city.direction.valueOf() == direction))); 
   }
 
   editCityResidentNumber(city:string, newNumber: number){
