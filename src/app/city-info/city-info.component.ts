@@ -11,34 +11,26 @@ import { hebrew } from '../shared/hebrew.data';
   styleUrls: ['./city-info.component.scss']
 })
 export class CityInfoComponent implements OnInit {
-// @Input() cityObject!: CityObject;
-@Input() name!: string;
-@Input() residentsNumber!: string;
-@Output() numberChange = new EventEmitter<string>();
+  @Input() name!: string;
+  @Input() residentsNumber!: string;
+  @Output() numberChange = new EventEmitter<string>();
 
+  edit_he = hebrew.get("edit");
+  save_he = hebrew.get("save");
 
-edit_he = hebrew.get("edit");
-save_he = hebrew.get("save");
+  constructor(){}
 
+  ngOnInit(){
+    $("input").attr('disabled', 'disabled')
+  }
 
-constructor(){}
+  OnEditResidentsNumberClick(){
+    $("input").removeAttr('disabled');
+  }
 
-
-ngOnInit(){
-  $("input").attr('disabled', 'disabled')
-}
-
-
-OnEditResidentsNumberClick(){
-  console.log("edit number")
-  $("input").removeAttr('disabled');
-}
-
-onSaveNumberChangeClick(newNumber: string){
-  $("input").attr('disabled', 'disabled')
-  console.log("number changed to:" + newNumber);
-  this.numberChange.emit(newNumber);
-}
-
+  onSaveNumberChangeClick(newNumber: string){
+    $("input").attr('disabled', 'disabled')
+    this.numberChange.emit(newNumber);
+  }
 
 }
