@@ -10,6 +10,7 @@
     justify-content: center;
     text-align: center;
     font-family: 'Varela Round';
+    min-width: fit-content;
 }
 
 .city_displayer_header{
@@ -22,7 +23,7 @@
 }
 
 .header_coloumn_name{
-    padding: 1em 2em 0 2em;
+    padding: 1em 5em 0 2em;
     // font-family: 'Varela Round';
     font-weight: bold;
 }
@@ -38,7 +39,8 @@
     display: flex;
     flex-direction: column;
     background-color: #eeeee9; // #ecede2; 
-    width: fit-content;
+    width: 50%;
+    min-width: fit-content;
     border-radius: 15px;
     max-height: 30em;
     scroll-behavior: auto;
