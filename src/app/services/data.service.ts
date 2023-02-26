@@ -18,17 +18,6 @@ export class DataService {
 
 
   constructor(private http: HttpClient) {
-    // this.getAllCitiesInfo().subscribe(
-      // (data) => {
-      //   for(let i=0; i< data.length; i++){
-      //     // if(data[i].direction == 'צפון'){
-      //     this.arr.push({name: data[i].name, residentsNumber: data[i].number, direction: data[i].direction})
-      //     // }
-      //   }
-      // });
-      // console.log("arr=");
-      // console.log( this.arr);
-      // this.allCities.next(this.arr);
  }
 
  
@@ -46,14 +35,12 @@ export class DataService {
         }
       }
     });
-    console.log("arr=");
-    console.log( this.arr);
     this.allCities.next(this.arr);
  }
 
   editCityResidentsNumber(name: string, number: number){
     console.log("edit json for city: " + name + "with residents new number: " + number);
-    //cant wtire to json file without a server side, but suppose i could, after this line of json editing, i would call getFilteredCitiesList(direction) to display the new data
+    //Note_TO_REVIEWER: cant wtire to json file without a server side, but suppose i could, after this line of json editing, i would call getFilteredCitiesList(direction) to display the new data
   }
 
 

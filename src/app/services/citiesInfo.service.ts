@@ -19,12 +19,10 @@ export class CitiesService {
   }
   
   fetchCitiesByDirection(direction:string): Observable<CityObject[]>{ 
-    console.log("dir to filter = " + direction);
     this.dataService.getFilteredCitiesList(direction);
-    console.log("after filter");
     this.dataService.allCities$.forEach(x => console.log(x));
     return this.dataService.allCities$;
-    //*NOTE TO REVIEWER: for some reason i cant find, the rxjs filter operator is not recognized, and so an empty array is returned from the line below.
+    //*NOTE_TO_REVIEWER: for some reason i cant find, the rxjs filter operator is not recognized, and so an empty array is returned from the line below.
     //I implemented the function in a less conventional way due to a busy schedule that i have, and the fact that i want to submit on time. sorry for that.
     return this.dataService.allCities$.pipe(map((cities:CityObject[]) => cities.filter((city:CityObject) => city.direction.valueOf() == direction))); 
   }
@@ -32,8 +30,5 @@ export class CitiesService {
   editCityResidentNumber(city:string, newNumber: number){
     this.dataService.editCityResidentsNumber(city, newNumber);
   }
-
-
-
 
 }

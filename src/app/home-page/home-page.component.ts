@@ -1,13 +1,11 @@
 
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
 
 import { CitiesService } from '../services/citiesInfo.service';
 import { CityObject, Direction } from '../models/types.model';
 import { hebrew } from '../shared/hebrew.data';
 import { DataService } from '../services/data.service';
-import { Observable } from 'rxjs';
-
 
 
 @Component({
@@ -43,18 +41,11 @@ export class HomePageComponent implements OnInit{
     {id: Direction.West, value: this.west_he}
 ];
 
-
   constructor(private citiesService: CitiesService, private data:DataService){
       this.cities = this.citiesService.fetchCitiesByDirection(this.selectedDir);
-      console.log("filtered_cities = ");
-      this.cities.forEach(
-          x=>{console.log(x)}
-      );
    }
 
-
   ngOnInit(): void{
-  //  this.fetchCitiesToDisplay();
   }
 
   onDirectionSelect(select: string): void {
