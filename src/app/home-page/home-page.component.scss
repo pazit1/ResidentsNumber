@@ -17,58 +17,61 @@
     direction: rtl;
     flex-direction: row;
     color: #4D695C;
-    margin: 0.5em 1em 0;
+    margin: 0.5rem 1rem 0;
 }
 
 .header_coloumn_name{
-    padding: 1em 5em 0 2em;
+    padding: 1rem 3rem 0 2rem;
     // font-family: 'Varela Round';
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .header_coloumn_number{
-    padding: 1em 7em 0 2em;
+    padding: 1rem 7.5rem 0 2rem;
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .city{
-    margin: 1em;
+    margin: 0.8rem;
 }
 
 .cities_block_display{
     position: absolute;
-    left: 30em;
-    top: 10em;
+    left: 30rem;
+    top: 10rem;
     display: flex;
     flex-direction: column;
     background-color: #eeeee9; 
     width: 50%;
     min-width: fit-content;
     border-radius: 15px;
-    max-height: 30em;
+    max-height: 30rem;
     scroll-behavior: auto;
     overflow-y: auto;
 }
 
 .drop_down_list{
     position: absolute;
-    top: 4em;
-    left: 8em;
-    margin: 2em;
+    top: 4rem;
+    left: 8rem;
+    margin: 2rem;
     width: fit-content;
     height: fit-content;
 }
 
 .select{
-    width: 6em;
-    height: 2em;
+    width: 6rem;
+    height: 2rem;
     color: #4D695C;
     background-color:  #BFD4CE;
     border: none;
     text-align: center;
     border-radius: 15px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
+
 
 .option{
     color: #4D695C;
