@@ -1,6 +1,5 @@
 
 .home_page_contant{
-    // position: relative;
     margin-top: 10%;
     display: flex;
     background-color: #F5F5F5;
@@ -18,7 +17,6 @@
     direction: rtl;
     flex-direction: row;
     color: #4D695C;
-    // font-size: 1.3em;
     margin: 0.5em 1em 0;
 }
 
@@ -30,7 +28,6 @@
 
 .header_coloumn_number{
     padding: 1em 7em 0 2em;
-    // font-family: 'Varela Round';
     font-weight: bold;
 }
 
@@ -44,7 +41,7 @@
     top: 10em;
     display: flex;
     flex-direction: column;
-    background-color: #eeeee9; // #ecede2; 
+    background-color: #eeeee9; 
     width: 50%;
     min-width: fit-content;
     border-radius: 15px;
@@ -60,13 +57,12 @@
     margin: 2em;
     width: fit-content;
     height: fit-content;
-    // font-family: 'Varela Round';
 }
 
 .select{
     width: 6em;
     height: 2em;
-    color: #4D695C;// #ecede2;
+    color: #4D695C;
     background-color:  #BFD4CE;
     border: none;
     text-align: center;
@@ -75,6 +71,6 @@
 }
 
 .option{
-    color: #4D695C;// #ecede2;
+    color: #4D695C;
     background-color:  #BFD4CE;
 }
